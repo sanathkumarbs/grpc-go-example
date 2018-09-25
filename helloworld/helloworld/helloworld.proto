@@ -1,0 +1,29 @@
+// Defining the hello world service
+// Generate the go code by running:
+// protoc --go_out=$(pwd) helloworld.proto
+
+syntax = "proto3";
+
+package helloworld;
+
+// Service Definition
+// service <servicename>
+
+// The greeting service definition
+service Greeter {
+    // rpc <endpoint> (messagename) returns (messagename) {}
+    rpc SayHello (HelloRequest) returns (HelloResponse) {}
+}
+
+// Defining the messages
+// message <messagename>
+
+// The Request Message
+message HelloRequest {
+    string name = 1;
+}
+
+// The Response Message
+message HelloResponse {
+    string message = 1;
+}
